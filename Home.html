@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trafic Light</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div  onclick={remove()}>
+        <table class="traficLight">
+            <tr>
+                <th class="red"></th>
+            </tr>
+            <tr>
+                <th class="yellow"></th>
+            </tr>
+            <tr>
+                <th class="green"></th>
+            </tr>
+        </table>
+        <table class="lightrod"></table>
+    </div>
+    <div class="controller">
+        <table class="traficcontroller">
+            <tr>
+                <th><button class="controlred" type="button" onclick={red()}></button></th>
+            </tr>
+            <tr>
+                <th><button class="controlyellow" type="button" onclick={yellow()}></button></th>
+            </tr>
+            <tr>
+                <th><button class="controlgreen" type="button" onclick={green()}></button></th>
+            </tr>
+        </table>
+        <table class="controlerrod"></table>
+        <h2>Controller</h2>
+    </div>
+    <div class="road"></div>
+    <h2>Traffic Light</h2>
+    <script>
+        function red(){
+            document.getElementsByClassName('red')[0].style.backgroundColor = "red";
+            document.getElementsByClassName('yellow')[0].style.backgroundColor = "rgb(233, 233, 195)";
+            document.getElementsByClassName('green')[0].style.backgroundColor = "rgb(198, 237, 198)";
+        }
+        function yellow(){
+            document.getElementsByClassName('yellow')[0].style.backgroundColor = "yellow";
+            document.getElementsByClassName('green')[0].style.backgroundColor = "rgb(198, 237, 198)";
+            document.getElementsByClassName('red')[0].style.backgroundColor = "rgb(240, 193, 193)";
+        }
+        function green(){
+            document.getElementsByClassName('green')[0].style.backgroundColor = "green";
+            document.getElementsByClassName('red')[0].style.backgroundColor = "rgb(240, 193, 193)";
+            document.getElementsByClassName('yellow')[0].style.backgroundColor = "rgb(233, 233, 195)";
+        }
+        function remove(){
+            document.getElementsByClassName('green')[0].style.backgroundColor = "rgb(198, 237, 198)";
+            document.getElementsByClassName('red')[0].style.backgroundColor = "rgb(240, 193, 193)";
+            document.getElementsByClassName('yellow')[0].style.backgroundColor = "rgb(233, 233, 195)";
+        }
+    </script>
+</body>
+</html>
